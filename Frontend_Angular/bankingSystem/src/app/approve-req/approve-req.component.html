@@ -1,0 +1,20 @@
+<p>approve-req works!</p>
+<table class="table">
+    <thead>
+        <th>Account Id</th>
+        <th>Cheque Book Request Status</th>
+        <th>Change Status</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of reqList; let i = index;">
+            <td>{{item.account.id}}</td>
+            <td>{{item.status}}</td>
+            <td>
+                <div *ngIf="item.status=='pending'">
+                    <button class="btn btn-success" (click)="approveReq(item)">Approve Request</button>
+                    <button class="btn btn-danger" (click)="declineReq(item)">Decline Request</button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

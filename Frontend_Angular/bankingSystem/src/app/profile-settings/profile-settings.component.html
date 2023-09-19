@@ -1,0 +1,12 @@
+<p>profile-settings works!</p>
+<form (ngSubmit)="onSubmit()" ngNativeValidate>
+First Name: <input type="text"  [(ngModel)]="user.fname" name="fname" required><br>
+Last Name:  <input type="text"  [(ngModel)]="user.lname" name="lname" required><br>
+Address: <input type="text"  [(ngModel)]="user.address" name="add" required>
+Pincode: <input type="number"  [(ngModel)]="user.pincode" name="pin" required><br>
+Date of Birth: <input type="date"  [(ngModel)]="user.dob" name="dob" required><br>
+Contact Number: <input type="number"  [(ngModel)]="user.mobileNo" name="contact" required><br>
+<input class="btn btn-primary btn-lg" type="Submit">
+<input class="btn btn-primary btn-lg" type="Reset">
+</form>
+ 

@@ -1,0 +1,9 @@
+<p>reset-pwd works!</p>
+<form (ngSubmit)="onSubmit()" ngNativeValidate >
+    <label>Enter your Old Password:</label>
+    <input type="text" name="username" [(ngModel)]="user.oldPassword" required><br>
+    <label>Enter your new password</label>
+    <input type="password" name="password" [(ngModel)]="user.newPassword" required ><br>
+    <input class="btn btn-primary btn-lg" type="Submit">
+    </form>
+

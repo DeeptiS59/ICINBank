@@ -1,0 +1,24 @@
+<p>admin-user-details works!</p>
+<table class="table" >
+    <thead>
+        <tr>
+            <th>Account ID</th>
+            <th>Type of Account</th>
+            <th>Closing Balance</th>
+            <th>Blocked Account</th>
+            <th>View Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of accountList; let i = index;">
+            <td>{{item.id}}</td>
+            <td>{{item.type}}</td>
+            <td>{{item.amount}}</td>
+            <td>{{item.isLocked}}</td>
+            <td> 
+                <button *ngIf="item.isLocked==true" class="btn btn-success" (click)="onEnable(this.item)"> Enable</button>
+                 <button *ngIf="item.isLocked==false"class="btn btn-danger" (click)="onDisable(this.item)"> Disable</button>
+            </td>
+        </tr>
+    </tbody>    
+</table>

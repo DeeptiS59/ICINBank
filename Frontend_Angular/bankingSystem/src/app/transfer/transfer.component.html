@@ -1,0 +1,15 @@
+<p>transfer works!</p>
+<form (ngSubmit)="onSubmit()" ngNativeValidate>
+    <label>Transfer money from:</label>
+    <select [(ngModel)]="transaction.sourceAccount.id" name="hi" required>
+        <option *ngFor="let item of accountList; let i = index;" [ngValue]="item.id">{{item.id+" "+item.type}}</option>
+    </select><hr>
+    <label>Enter the account number to transfer money to: </label>
+    <input type="number" name="transfer" [(ngModel)]="transaction.destinationAccount.id" required>
+    <label>Enter the value you want to transfer: </label>
+    <input type="number" name="deposit" [(ngModel)]="transaction.transactionAmount" required><hr>
+    <label>Transaction Remark: </label>
+    <input type="text" name="comment" [(ngModel)]="transaction.userComment" required><hr>
+    <input type="Submit">
+    <input type="Reset">
+</form>

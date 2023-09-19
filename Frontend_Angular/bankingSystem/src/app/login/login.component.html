@@ -1,0 +1,12 @@
+<p>login works!</p>
+<form (ngSubmit)="onSubmit()">
+    <label>Enter Username:</label>
+    <input type="text" name="username" [(ngModel)]="user.username"><br>
+    <label>Enter your Password</label>
+    <input type="password" name="password" [(ngModel)]="user.password"><br>
+    <label></label>
+    <input class="btn btn-warning btn-lg" type="Submit" value="Login">
+    </form>
+    <a href="register">Register Here</a>
+    
+

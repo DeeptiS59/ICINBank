@@ -1,0 +1,35 @@
+<p>account-details works!</p>
+<div>Account ID: {{account.id}}</div> 
+<div>Account Value: {{account.amount}}</div>
+<div>Account Type: {{account.type}}</div>
+<div>Cheque Book Status:
+    <div *ngIf="chequeBookReq==null"> <button class="btn btn-primary" (click)="raiseReq()">Raise Cheque Book Request</button>
+    </div> 
+    <div *ngIf="chequeBookReq!=null"> 
+        {{chequeBookReq.status}}
+        <div *ngIf="chequeBookReq.status=='approved'">
+            <h6>Cheque Book has been dispatched</h6>
+        </div>
+    </div>
+</div>
+
+<table class="table" >
+    <thead>
+        <tr>
+            <th>Source Account ID</th>
+            <th>Destination Account ID</th>
+            <th>Transferred Amount</th>
+            <th> Date and Time</th>
+            <th>Remark</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of accountTransactions; let i = index;">
+            <td>{{item.sourceAccount?item.sourceAccount.id:""}}</td>
+            <td>{{item.destinationAccount?item.destinationAccount.id:""}}</td>
+            <td>{{item.transactionAmount}}</td>
+            <td>{{item.transactionTime}}</td>
+            <td>{{item.userComment}}</td>
+        </tr>
+    </tbody>    
+</table>

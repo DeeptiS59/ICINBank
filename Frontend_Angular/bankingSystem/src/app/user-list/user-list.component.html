@@ -1,0 +1,15 @@
+<p>user-list works!</p>
+<table class="table">
+    <thead>
+        <th>User Name</th>
+        <th>Full Name</th>
+        <th>Enable/Disable Account</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of userList; let i = index;">
+            <td>{{item.username}}</td>
+            <td>{{item.fname}} {{item.lname}}</td>
+            <td><button class="btn btn-primary" [routerLink]="['/admin/user',item.id]">User Account Details</button></td>
+        </tr>
+    </tbody>
+</table>

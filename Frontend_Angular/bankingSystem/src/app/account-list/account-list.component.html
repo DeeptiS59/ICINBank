@@ -1,0 +1,21 @@
+<p>account-list works!</p>
+<table class="table" >
+    <thead>
+        <tr>
+            <th>Account ID</th>
+            <th>Type of Account</th>
+            <th>Closing Balance</th>
+            <th>Account Locked</th>
+            <th>View Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of accountList; let i = index;">
+            <td>{{item.id}}</td>
+            <td>{{item.type}}</td>
+            <td>{{item.amount}}</td>
+            <td>{{item.isLocked}}</td>
+            <th> <button class="btn btn-primary" [routerLink]="['/user/account',item.id]"> View Account Details</button></th>
+        </tr>
+    </tbody>    
+</table>
